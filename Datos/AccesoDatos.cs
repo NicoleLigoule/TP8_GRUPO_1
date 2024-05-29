@@ -9,7 +9,12 @@ namespace Datos
 {
     internal class AccesoDatos
     {
-        private string rutaBDNeptuno = "Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True";
+        private string rutaBDNeptuno;
+
+        public AccesoDatos()
+        {
+            rutaBDNeptuno = "Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True";
+        }
 
         private SqlConnection ObtenerConexion()
         {
