@@ -19,6 +19,9 @@
         .auto-style5 {
             font-size: x-large;
         }
+        .auto-style6 {
+            width: 176px;
+        }
     </style>
 </head>
 <body>
@@ -26,38 +29,44 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursales</asp:HyperLink>
+                    </td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6">
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ListadoDeSurcursales.aspx">Lista de Sucursales</asp:HyperLink>
+                    </td>
+                    <td>
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style5" colspan="2"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Grupo N°1</strong></td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4"><strong>Agregar Sucursal</strong></td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">Nombre Sucursal:</td>
-                    <td>
+                    <td class="auto-style6">
                         <asp:TextBox ID="txtNombreSucursal" runat="server" Width="259px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
@@ -65,7 +74,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">Descripcion:</td>
-                    <td>
+                    <td class="auto-style6">
                         <asp:TextBox ID="txtDescripcion" runat="server" Height="94px" TextMode="MultiLine"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
@@ -73,7 +82,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">Provincia:</td>
-                    <td>
+                    <td class="auto-style6">
                         <asp:DropDownList ID="ddlProvincia" runat="server">
                         </asp:DropDownList>
                     </td>
@@ -82,7 +91,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">Direccion:</td>
-                    <td>
+                    <td class="auto-style6">
                         <asp:TextBox ID="txtDireccion" runat="server" Width="260px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
@@ -90,7 +99,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>
+                    <td class="auto-style6">
                         <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" />
                     </td>
                     <td>&nbsp;</td>
