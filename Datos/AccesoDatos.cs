@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    internal class AccesoDatos
+      class AccesoDatos
     {
         private string rutaBDNeptuno;
 
@@ -31,15 +31,18 @@ namespace Datos
         }
 
 
-        private SqlDataAdapter ObtenerAdaptador(String consultaSql, SqlConnection cn)
+        public SqlDataAdapter ObtenerAdaptador(string consulta)
         {
-            SqlDataAdapter adaptador;
+            SqlDataAdapter adapta;
+
             try
             {
-                adaptador = new SqlDataAdapter(consultaSql, cn);
-                return adaptador;
+                adapta = new SqlDataAdapter(consulta, ObtenerConexion());
+
+                return adapta;
+
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 return null;
             }
