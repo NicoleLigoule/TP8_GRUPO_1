@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public  class AccesoDatos
+     public class AccesoDatos
     {
         private string rutaBDNeptuno;
 

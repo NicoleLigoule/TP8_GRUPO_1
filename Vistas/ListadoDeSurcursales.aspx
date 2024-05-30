@@ -69,8 +69,17 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:GridView ID="gdSucursales" runat="server">
+                        <asp:GridView ID="gdSucursales" runat="server" AutoGenerateColumns="False" DataKeyNames="Id_Sucursal" DataSourceID="SqlDataSource1">
+                            <Columns>
+                                <asp:BoundField DataField="Id_Sucursal" HeaderText="Id_Sucursal" InsertVisible="False" ReadOnly="True" SortExpression="Id_Sucursal" />
+                                <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                                <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
+                                <asp:BoundField DataField="Provincia" HeaderText="Provincia" SortExpression="Provincia" />
+                                <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
+                            </Columns>
                         </asp:GridView>
+                        <br />
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT s.Id_Sucursal, s.NombreSucursal AS Nombre, s.DescripcionSucursal AS Descripcion, p.DescripcionProvincia AS Provincia, s.DireccionSucursal AS Direccion FROM Sucursal AS s INNER JOIN Provincia AS p ON s.Id_ProvinciaSucursal = p.Id_Provincia"></asp:SqlDataSource>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>&nbsp;</td>
