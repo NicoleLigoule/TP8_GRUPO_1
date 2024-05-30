@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-      class AccesoDatos
+    public  class AccesoDatos
     {
         private string rutaBDNeptuno;
 
@@ -41,6 +41,23 @@ namespace Datos
 
                 return adapta;
 
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        public SqlDataReader obtenerRead(string Consulta, string ID)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand(Consulta, ObtenerConexion());
+
+                command.Parameters.AddWithValue("@Id_Sucursal", ID);
+
+
+                SqlDataReader reader = command.ExecuteReader();
+                return reader;
             }
             catch (Exception e)
             {
