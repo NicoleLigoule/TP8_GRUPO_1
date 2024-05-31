@@ -110,5 +110,15 @@ namespace Datos
             Conexion.Close();
             return FilasCambiadas;
         }
+
+        public DataTable getTabla(String nombre, String consulta)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection Conexion = ObtenerConexion();
+            SqlDataAdapter adp = ObtenerAdaptador(consulta);
+            adp.Fill(ds, nombre);
+            Conexion.Close();
+            return ds.Tables[nombre];
+        }
     }
 }

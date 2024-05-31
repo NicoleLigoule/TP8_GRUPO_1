@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using Entidades;
 using Datos;
 namespace Negocio
@@ -63,6 +64,13 @@ namespace Negocio
             DatoSucursal dato = new DatoSucursal();
 
             return dato.eliminar(id_sucursal) > 0 ? true : false;
+        }
+
+        public DataTable getGrd()
+        {
+            DatoSucursal dato = new DatoSucursal();
+            return dato.getTableSucursal();
+
         }
 
     }

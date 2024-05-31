@@ -46,5 +46,11 @@ namespace Datos
             comando.Parameters.Add("@id_sucursal", SqlDbType.Int).Value = id_sucursal;
             return ds.EjecutarProcedimientoAlmacenado(comando, "SP_ELIMINARSUCURSAL");
         }
+
+        public DataTable getTableSucursal()
+        {
+            DataTable tabla = ds.getTabla("Sucursal", "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal s INNER JOIN Provincia p ON s.Id_ProvinciaSucursal = p.Id_Provincia");
+            return tabla;        
+        }
     }
 }

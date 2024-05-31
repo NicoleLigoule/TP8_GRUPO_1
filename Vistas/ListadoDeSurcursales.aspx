@@ -64,19 +64,12 @@
                         <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
                     </td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnMostrar" runat="server" Text="Mostrar todos" />
+                        <asp:Button ID="btnMostrar" runat="server" Text="Mostrar todos" OnClick="btnMostrar_Click" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:GridView ID="gdSucursales" runat="server" AutoGenerateColumns="False" DataKeyNames="Id_Sucursal" DataSourceID="SqlDataSource1">
-                            <Columns>
-                                <asp:BoundField DataField="Id_Sucursal" HeaderText="Id_Sucursal" InsertVisible="False" ReadOnly="True" SortExpression="Id_Sucursal" />
-                                <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                                <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
-                                <asp:BoundField DataField="Provincia" HeaderText="Provincia" SortExpression="Provincia" />
-                                <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
-                            </Columns>
+                        <asp:GridView ID="grdSucursales" runat="server">
                         </asp:GridView>
                         <br />
                     </td>

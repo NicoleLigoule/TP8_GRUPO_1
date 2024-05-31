@@ -11,6 +11,7 @@ namespace Vistas
 {
     public partial class AgregarSucursal : System.Web.UI.Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
@@ -19,7 +20,7 @@ namespace Vistas
                 CargadoDePag pag = new CargadoDePag();
 
                 pag.CargarDDLProvinciasa(ref ddlProvincia);
-
+                
             }
         }
 
