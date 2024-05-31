@@ -36,6 +36,8 @@ namespace Negocio
             return null;
         }
 
+
+
         public bool agregarSucursal(string nombre, string descripcion, int provinciaSucursal, string direccion)
         {
             int cantFilas = 0;
@@ -62,5 +64,6 @@ namespace Negocio
 
             return dato.eliminar(id_sucursal) > 0 ? true : false;
         }
+
     }
 }

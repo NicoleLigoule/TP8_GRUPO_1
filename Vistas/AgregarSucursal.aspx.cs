@@ -25,6 +25,7 @@ namespace Vistas
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            CargadoDePag cargado = new CargadoDePag();
             NegocioSucursal AgregarSucursal = new NegocioSucursal();
             string nombreSuc = txtNombreSucursal.Text;
             string descripcionSuc = txtDescripcion.Text;
@@ -32,15 +33,10 @@ namespace Vistas
             string direccionSuc = txtDireccion.Text;
 
             AgregarSucursal.agregarSucursal(nombreSuc, descripcionSuc, provinciaSuc, direccionSuc);
-            limpiarCampos();
+
+            cargado.limpiarCampos(ref txtNombreSucursal, ref txtDireccion, ref txtDescripcion, ref ddlProvincia);
         }
 
-        public void limpiarCampos()
-        {
-            txtNombreSucursal.Text = "";
-            txtDescripcion.Text = "";
-            txtDireccion.Text = "";
-            ddlProvincia.SelectedIndex = 0;
-        }
+        
     }
 }

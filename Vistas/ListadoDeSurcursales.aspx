@@ -79,7 +79,6 @@
                             </Columns>
                         </asp:GridView>
                         <br />
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT s.Id_Sucursal, s.NombreSucursal AS Nombre, s.DescripcionSucursal AS Descripcion, p.DescripcionProvincia AS Provincia, s.DireccionSucursal AS Direccion FROM Sucursal AS s INNER JOIN Provincia AS p ON s.Id_ProvinciaSucursal = p.Id_Provincia"></asp:SqlDataSource>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>&nbsp;</td>

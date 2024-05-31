@@ -45,6 +45,14 @@ namespace Negocio
                 }
             }
 
+            
+        }
+        public void limpiarCampos(ref TextBox txtNombreSucursal, ref TextBox txtDescripcion, ref TextBox txtDireccion, ref DropDownList ddlProvincia)
+        {
+            txtNombreSucursal.Text = "";
+            txtDescripcion.Text = "";
+            txtDireccion.Text = "";
+            ddlProvincia.SelectedIndex = 0;
         }
 
     }
