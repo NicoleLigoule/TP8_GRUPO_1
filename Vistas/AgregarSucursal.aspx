@@ -22,6 +22,21 @@
         .auto-style6 {
             width: 176px;
         }
+        .auto-style7 {
+            width: 144px;
+            height: 29px;
+        }
+        .auto-style8 {
+            width: 189px;
+            height: 29px;
+        }
+        .auto-style9 {
+            width: 176px;
+            height: 29px;
+        }
+        .auto-style10 {
+            height: 29px;
+        }
     </style>
 </head>
 <body>
@@ -64,12 +79,14 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style4">Nombre Sucursal:</td>
-                    <td class="auto-style6">
+                    <td class="auto-style7"></td>
+                    <td class="auto-style8">Nombre Sucursal:</td>
+                    <td class="auto-style9">
                         <asp:TextBox ID="txtNombreSucursal" runat="server" Width="259px"></asp:TextBox>
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">
+                        <asp:RequiredFieldValidator ID="rfvtxtAgregarSucursal" runat="server" ControlToValidate="txtNombreSucursal" ErrorMessage="*" ForeColor="Red" ValidationGroup="group1">Ingrese un Nombre Sucursal.</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
@@ -77,7 +94,9 @@
                     <td class="auto-style6">
                         <asp:TextBox ID="txtDescripcion" runat="server" Height="94px" TextMode="MultiLine"></asp:TextBox>
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rfvtxtboxDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="*" ForeColor="Red" ValidationGroup="group1">Ingrese una descripcion.</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>

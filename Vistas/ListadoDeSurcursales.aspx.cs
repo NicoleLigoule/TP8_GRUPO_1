@@ -40,6 +40,7 @@ namespace Vistas
             if (txtBusqueda.Text.Length > 0)
             {
                 consulta += " WHERE s.Id_Sucursal = @Id_Sucursal";
+
             }
         }
     }
