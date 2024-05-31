@@ -8,7 +8,7 @@ using Entidades;
 using Datos;
 namespace Negocio
 {
-    class NegocioSucursal
+    public class NegocioSucursal
     {
         public Sucursal TraerSucursalSegunId(string ID)
         {

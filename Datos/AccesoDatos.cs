@@ -9,16 +9,16 @@ namespace Datos
 {
      public class AccesoDatos
     {
-        private string rutaBDNeptuno;
+        private string rutaBDSucursales;
 
         public AccesoDatos()
         {
-            rutaBDNeptuno = "Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True";
+            rutaBDSucursales = "Data Source = localhost\\sqlexpress; Initial Catalog = BDSucursales; Integrated Security = True";
         }
 
         private SqlConnection ObtenerConexion()
         {
-            SqlConnection cn = new SqlConnection(rutaBDNeptuno);
+            SqlConnection cn = new SqlConnection(rutaBDSucursales);
             try
             {
                 cn.Open();
@@ -30,7 +30,26 @@ namespace Datos
             }
         }
 
+        public SqlDataReader obtenerReadDDl()
+        {
+            try
+            {
+                string consulta = "SELECT DescripcionProvincia, Id_Provincia FROM dbo.Provincia";
 
+                AccesoDatos acceso = new AccesoDatos();
+                SqlConnection conexion = acceso.ObtenerConexion();
+
+                SqlCommand commandprov = new SqlCommand(consulta, conexion);
+
+                SqlDataReader reader = commandprov.ExecuteReader();
+                return reader;
+            }
+            catch (Exception e)
+            {
+
+                return null;
+            }
+        }
         public SqlDataAdapter ObtenerAdaptador(string consulta)
         {
             SqlDataAdapter adapta;
