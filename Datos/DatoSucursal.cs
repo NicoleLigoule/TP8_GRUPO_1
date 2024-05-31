@@ -39,5 +39,12 @@ namespace Datos
             SqlParametros = Comando.Parameters.Add("@DireccionSucursal", SqlDbType.VarChar);
             SqlParametros.Value = sucursal.GetDireSucur();
         }
+
+        public int eliminar(int id_sucursal)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.Parameters.Add("@id_sucursal", SqlDbType.Int).Value = id_sucursal;
+            return ds.EjecutarProcedimientoAlmacenado(comando, "SP_ELIMINARSUCURSAL");
+        }
     }
 }

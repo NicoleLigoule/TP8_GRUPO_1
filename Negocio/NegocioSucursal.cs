@@ -54,5 +54,13 @@ namespace Negocio
 
             return cantFilas == 1;
         }
+
+
+        public bool eliminarSucursal(int id_sucursal)
+        {
+            DatoSucursal dato = new DatoSucursal();
+
+            return dato.eliminar(id_sucursal) > 0 ? true : false;
+        }
     }
 }
