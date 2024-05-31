@@ -70,7 +70,11 @@ namespace Negocio
         {
             DatoSucursal dato = new DatoSucursal();
             return dato.getTableSucursal();
-
+        }
+        public DataTable getGrdFiltrado(string ID)
+        {
+            DatoSucursal dao = new DatoSucursal();
+            return dao.getTablaFiltrada(ID);
         }
 
     }

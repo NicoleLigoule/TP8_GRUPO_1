@@ -52,5 +52,10 @@ namespace Datos
             DataTable tabla = ds.getTabla("Sucursal", "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal s INNER JOIN Provincia p ON s.Id_ProvinciaSucursal = p.Id_Provincia");
             return tabla;        
         }
+        public DataTable getTablaFiltrada(String ID)
+        {
+            DataTable tabla = ds.getTabla("Sucursal", "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal s INNER JOIN Provincia p ON s.Id_ProvinciaSucursal = p.Id_Provincia WHERE s.Id_Sucursal =" + ID);
+            return tabla;
+        }
     }
 }
