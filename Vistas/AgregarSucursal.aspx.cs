@@ -22,7 +22,19 @@ namespace Vistas
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            String consulta = "insert into Sucursal(NombreSucursal,DescripcionSucursal,Id_ProvinciaSucursal,DireccionSucursal) values ('" + txtNombreSucursal.Text + "','" + txtDescripcion.Text + "','" + ddlProvincia.SelectedValue + "','" + txtDireccion.Text + "')";
 
+
+            limpiarCampos();
+            
+        }
+
+        public void limpiarCampos()
+        {
+            txtNombreSucursal.Text = "";
+            txtDescripcion.Text = "";
+            txtDireccion.Text = "";
+            ddlProvincia.SelectedIndex = 0;
         }
 
         protected void cargarProvincias()
