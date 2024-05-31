@@ -55,7 +55,7 @@
                         <asp:TextBox ID="txtEliminarSucu" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style6">
-                        <asp:Button ID="btnEliminar" runat="server" Height="32px" Text="Eliminar" Width="82px" />
+                        <asp:Button ID="btnEliminar" runat="server" Height="32px" Text="Eliminar" Width="82px" OnClick="btnEliminar_Click" />
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ID="rfvCompletar" runat="server" ControlToValidate="txtEliminarSucu">Debe completar el campo para poder eliminar una Sucursal</asp:RequiredFieldValidator>
