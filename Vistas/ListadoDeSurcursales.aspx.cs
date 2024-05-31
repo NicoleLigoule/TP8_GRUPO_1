@@ -30,6 +30,17 @@ namespace Vistas
             DataTable tablaSucursal = neg.getGrd();
             grdSucursales.DataSource = tablaSucursal;
             grdSucursales.DataBind();
+            txtBusqueda.Text = " ";
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            string consulta = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal s INNER JOIN Provincia p ON s.Id_ProvinciaSucursal = p.Id_Provincia";
+
+            if (txtBusqueda.Text.Length > 0)
+            {
+                consulta += " WHERE s.Id_Sucursal = @Id_Sucursal";
+            }
         }
     }
 }

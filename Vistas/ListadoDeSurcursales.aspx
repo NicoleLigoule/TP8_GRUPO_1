@@ -56,12 +56,12 @@
                     <td class="auto-style2"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Busqueda ingrese Id sucural:</td>
+                    <td class="auto-style4">Busqueda ingrese Id sucural:&nbsp; </td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtBusqueda" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
                     </td>
                     <td class="auto-style4">
                         <asp:Button ID="btnMostrar" runat="server" Text="Mostrar todos" OnClick="btnMostrar_Click" />
