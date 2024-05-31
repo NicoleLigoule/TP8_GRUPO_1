@@ -36,5 +36,29 @@ namespace Negocio
             return null;
         }
 
+        public bool agregarSucursal(int idSucursal, string nombre, string descripcion, int idProvincia, string direccion)
+        {
+            int cantFilas = 0;
+
+            Sucursal sucursal = new Sucursal();
+            sucursal.setNombreSucursal(nombre);
+            sucursal.setDescripcionSucursal(descripcion);
+            sucursal.setId_ProvinciaSucursalr(idProvincia);
+            sucursal.setDireSucursal(direccion);
+            sucursal.setId_Sucursal(idSucursal);
+
+            DatoSucursal dato = new DatoSucursal();
+            if (!dato.existeSucursal(sucursal))
+            {
+                cantFilas = dato.agregar(sucursal);
+            }
+
+            return cantFilas == 1;
+        }
+
+        
+
+
+
     }
 }
