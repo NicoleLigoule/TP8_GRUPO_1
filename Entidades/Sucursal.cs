@@ -55,7 +55,7 @@ namespace Entidades
         {
             return DescripcionSucursal;
         }
-        public void setId_ProvinciaSucursalr(int ID)
+        public void setId_ProvinciaSucursal(int ID)
         {
             Id_ProvinciaSucursal = ID;
         }

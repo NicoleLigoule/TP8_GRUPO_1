@@ -21,25 +21,23 @@ namespace Datos
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosAgregar(ref comando, sucursal);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spAgregarSucursal");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "SP_AGREGARSUCURSAL");
         }
 
         private void ArmarParametrosAgregar(ref SqlCommand Comando, Sucursal sucursal)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@ID_SUCURSAL", SqlDbType.Int);
-            SqlParametros.Value = sucursal.GetId_Sucursal();
-            SqlParametros = Comando.Parameters.Add("@NOMBRE_SUCURSAL", SqlDbType.VarChar);
+            SqlParametros = Comando.Parameters.Add("@NombreSucursal", SqlDbType.VarChar);
             SqlParametros.Value = sucursal.GetNombreSucursal();
-            SqlParametros = Comando.Parameters.Add("@DESCRIPCION_SUCURSAL", SqlDbType.VarChar);
+
+            SqlParametros = Comando.Parameters.Add("@DescripcionSucursal", SqlDbType.VarChar);
             SqlParametros.Value = sucursal.GetDescripcionSucursal();
-            SqlParametros = Comando.Parameters.Add("@ID_PROVINCIA_SUCURSAL", SqlDbType.Int);
+
+            SqlParametros = Comando.Parameters.Add("@Id_ProvinciaSucursal", SqlDbType.Int);
             SqlParametros.Value = sucursal.GetId_ProvinciaSucursal();
-            SqlParametros = Comando.Parameters.Add("@DIRECCION_SUCURSAL", SqlDbType.VarChar);
+
+            SqlParametros = Comando.Parameters.Add("@DireccionSucursal", SqlDbType.VarChar);
             SqlParametros.Value = sucursal.GetDireSucur();
         }
-
-
-
     }
 }

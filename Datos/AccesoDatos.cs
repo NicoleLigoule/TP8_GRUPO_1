@@ -16,7 +16,7 @@ namespace Datos
             rutaBDSucursales = "Data Source = localhost\\sqlexpress; Initial Catalog = BDSucursales; Integrated Security = True";
         }
 
-        private SqlConnection ObtenerConexion()
+        public SqlConnection ObtenerConexion()
         {
             SqlConnection cn = new SqlConnection(rutaBDSucursales);
             try

@@ -29,25 +29,24 @@ namespace Negocio
                 sucursa.setId_Sucursal(id);
                 sucursa.setNombreSucursal(Nombre);
                 sucursa.setDescripcionSucursal(Descripcion);
-                sucursa.setId_ProvinciaSucursalr(idP);
+                sucursa.setId_ProvinciaSucursal(idP);
                 sucursa.setDireSucursal(Direccion);
                 return sucursa;
             }
             return null;
         }
 
-        public bool agregarSucursal(int idSucursal, string nombre, string descripcion, int idProvincia, string direccion)
+        public bool agregarSucursal(string nombre, string descripcion, int provinciaSucursal, string direccion)
         {
             int cantFilas = 0;
-
             Sucursal sucursal = new Sucursal();
+            DatoSucursal dato = new DatoSucursal();
+
             sucursal.setNombreSucursal(nombre);
             sucursal.setDescripcionSucursal(descripcion);
-            sucursal.setId_ProvinciaSucursalr(idProvincia);
+            sucursal.setId_ProvinciaSucursal(provinciaSucursal);
             sucursal.setDireSucursal(direccion);
-            sucursal.setId_Sucursal(idSucursal);
 
-            DatoSucursal dato = new DatoSucursal();
             if (!dato.existeSucursal(sucursal))
             {
                 cantFilas = dato.agregar(sucursal);
@@ -55,10 +54,5 @@ namespace Negocio
 
             return cantFilas == 1;
         }
-
-        
-
-
-
     }
 }

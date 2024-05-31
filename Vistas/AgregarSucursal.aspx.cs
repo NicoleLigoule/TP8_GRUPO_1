@@ -25,11 +25,14 @@ namespace Vistas
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            String consulta = "insert into Sucursal(NombreSucursal,DescripcionSucursal,Id_ProvinciaSucursal,DireccionSucursal) values ('" + txtNombreSucursal.Text + "','" + txtDescripcion.Text + "','" + ddlProvincia.SelectedValue + "','" + txtDireccion.Text + "')";
+            NegocioSucursal AgregarSucursal = new NegocioSucursal();
+            string nombreSuc = txtNombreSucursal.Text;
+            string descripcionSuc = txtDescripcion.Text;
+            int provinciaSuc = int.Parse(ddlProvincia.SelectedItem.Value);
+            string direccionSuc = txtDireccion.Text;
 
-
+            AgregarSucursal.agregarSucursal(nombreSuc, descripcionSuc, provinciaSuc, direccionSuc);
             limpiarCampos();
-            
         }
 
         public void limpiarCampos()
@@ -39,8 +42,5 @@ namespace Vistas
             txtDireccion.Text = "";
             ddlProvincia.SelectedIndex = 0;
         }
-
-       
-
     }
 }
