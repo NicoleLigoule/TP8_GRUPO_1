@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
+using Entidades;
 namespace Vistas
 {
     public partial class AgregarSucursal : System.Web.UI.Page
@@ -28,12 +29,9 @@ namespace Vistas
         {
             CargadoDePag cargado = new CargadoDePag();
             NegocioSucursal AgregarSucursal = new NegocioSucursal();
-            string nombreSuc = txtNombreSucursal.Text;
-            string descripcionSuc = txtDescripcion.Text;
-            int provinciaSuc = int.Parse(ddlProvincia.SelectedItem.Value);
-            string direccionSuc = txtDireccion.Text;
-
-            AgregarSucursal.agregarSucursal(nombreSuc, descripcionSuc, provinciaSuc, direccionSuc);
+            Sucursal sucu = new Sucursal(txtNombreSucursal.Text, txtDescripcion.Text, ddlProvincia.SelectedItem.Value, txtDireccion.Text);
+            
+            cargado.MensajeAgregar(ref lblMensaje, AgregarSucursal.agregarSucursal(sucu));
 
             cargado.limpiarCampos(ref txtNombreSucursal, ref txtDireccion, ref txtDescripcion, ref ddlProvincia);
         }

@@ -39,9 +39,9 @@ namespace Negocio
                 finally
                 {
                     dropDownList.Items.Insert(0, new ListItem("-- Seleccionar --", ""));
-                    // Asegúrate de cerrar el reader y la conexión
+                  
                     reader.Close();
-                    /// reader.Connection.Close();
+                   
                 }
             }
 
@@ -55,5 +55,16 @@ namespace Negocio
             ddlProvincia.SelectedIndex = 0;
         }
 
+        public void MensajeAgregar(ref Label lblmensaje,bool estado)
+        {
+            if (estado)
+            {
+                lblmensaje.Text = "La Sucursal se agrego correctamente";
+            }
+            else
+            {
+                lblmensaje.Text = "La Sucursal no se pudo agregar";
+            }
+        }
     }
 }

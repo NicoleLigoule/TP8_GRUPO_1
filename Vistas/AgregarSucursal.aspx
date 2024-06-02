@@ -125,7 +125,9 @@
                     <td class="auto-style6">
                         <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" ValidationGroup="group1" />
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    </td>
                 </tr>
             </table>
         </div>

@@ -39,16 +39,10 @@ namespace Negocio
 
 
 
-        public bool agregarSucursal(string nombre, string descripcion, int provinciaSucursal, string direccion)
+        public bool agregarSucursal(Sucursal sucursal)
         {
             int cantFilas = 0;
-            Sucursal sucursal = new Sucursal();
             DatoSucursal dato = new DatoSucursal();
-
-            sucursal.setNombreSucursal(nombre);
-            sucursal.setDescripcionSucursal(descripcion);
-            sucursal.setId_ProvinciaSucursal(provinciaSucursal);
-            sucursal.setDireSucursal(direccion);
 
             if (!dato.existeSucursal(sucursal))
             {

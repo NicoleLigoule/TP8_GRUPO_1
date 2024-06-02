@@ -20,16 +20,16 @@ namespace Entidades
 
         }
 
-        public Sucursal(string Id_Sucursa, string NombreProducto, string CantidadPorUnidad, string idProveedor, string PrecioUnidad, string DireSucur)
+        public Sucursal( string NombreSucursal, string DescripcionSucursal, string Id_ProvinciaSucursal, string DireccionSucursal)
         {
-            int ID, PRo;
-            int.TryParse(Id_Sucursa, out ID);
-            int.TryParse(Id_Sucursa, out PRo);
-            this.Id_Sucursal = ID;
-            this.NombreSucursal = NombreProducto;
-            this.DescripcionSucursal = CantidadPorUnidad;
+
+            int PRo;
+            int.TryParse(Id_ProvinciaSucursal, out PRo);
+            
+            this.NombreSucursal = NombreSucursal;
+            this.DescripcionSucursal = DescripcionSucursal;
             this.Id_ProvinciaSucursal = PRo;
-            this.DireccionSucursal = DireSucur;
+            this.DireccionSucursal = DireccionSucursal;
         }
         public void setId_Sucursal(int ID)
         {
