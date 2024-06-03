@@ -40,7 +40,7 @@ namespace Vistas
 
             foreach (Provincia provincia in list)
             {
-                ddlProvincia.Items.Add(new ListItem(provincia.Descripcion_Provincia, provincia.Id_provincia.ToString()));
+                ddlProvincia.Items.Add(new ListItem(provincia.GetDescripcionProvincia(), provincia.GetIdProvincia().ToString()));
             }
         }
 

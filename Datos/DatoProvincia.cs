@@ -27,7 +27,7 @@ namespace Datos
                 {
                     int id_provincia = reader.GetInt32(0);
                     string DescripcionProvincia = reader.GetString(1);
-                    Provincia prov = new Provincia { Id_provincia = id_provincia, Descripcion_Provincia = DescripcionProvincia };
+                    Provincia prov = new Provincia(id_provincia, DescripcionProvincia);
 
                     if (!provincias.Contains(prov))
                     {
