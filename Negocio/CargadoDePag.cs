@@ -66,5 +66,22 @@ namespace Negocio
                 lblmensaje.Text = "La Sucursal no se pudo agregar";
             }
         }
-    }
+
+        public void MensajeEliminado(ref Label lblmensaje, bool estado)
+        {
+            if (estado)
+            {
+                lblmensaje.Text = "La Sucursal se elimino con correctamente";
+            }
+            else
+            {
+                lblmensaje.Text = "La Sucursal no se pudo eliminar";
+            }
+        }
+
+        public void Vaciartxt(ref TextBox textBox)
+        {
+            textBox.Text = "";
+        }
+}
 }

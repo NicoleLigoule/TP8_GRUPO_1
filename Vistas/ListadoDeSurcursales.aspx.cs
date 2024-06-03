@@ -28,17 +28,19 @@ namespace Vistas
         protected void btnMostrar_Click(object sender, EventArgs e)
         {
             DataTable tablaSucursal = neg.getGrd();
+            CargadoDePag car = new CargadoDePag();
             grdSucursales.DataSource = tablaSucursal;
             grdSucursales.DataBind();
-            txtBusqueda.Text = " ";
+            car.Vaciartxt(ref txtBusqueda);
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            CargadoDePag car = new CargadoDePag();
             DataTable tablaSucursal = neg.getGrdFiltrado(txtBusqueda.Text);
             grdSucursales.DataSource = tablaSucursal;
             grdSucursales.DataBind();
-            txtBusqueda.Text = " ";
+            car.Vaciartxt(ref txtBusqueda);
 
         }
     }
