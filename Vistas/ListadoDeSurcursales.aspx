@@ -56,7 +56,7 @@
                     <td class="auto-style2"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Busqueda ingrese Id sucural:&nbsp; </td>
+                    <td class="auto-style4">Busqueda ingrese ID sucursal:&nbsp; </td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtBusqueda" runat="server"></asp:TextBox>
                     </td>
@@ -73,7 +73,8 @@
                         </asp:GridView>
                         <br />
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style5">&nbsp;
+                        <asp:Label runat="server" ID="lblMsgAdv" Text=" " ForeColor="Red"></asp:Label></td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>

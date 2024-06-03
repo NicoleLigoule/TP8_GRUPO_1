@@ -18,10 +18,7 @@ namespace Vistas
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
-                CargadoDePag pag = new CargadoDePag();
-
-                pag.CargarDDLProvinciasa(ref ddlProvincia);
-                
+                CargarDropDown();
             }
         }
 
@@ -36,6 +33,16 @@ namespace Vistas
             cargado.limpiarCampos(ref txtNombreSucursal, ref txtDireccion, ref txtDescripcion, ref ddlProvincia);
         }
 
-        
+        private void CargarDropDown()
+        {
+            NegocioProvincia negocioProvincia = new NegocioProvincia();
+            List<Provincia> list = negocioProvincia.ObtenerProvinciasDDL();
+
+            foreach (Provincia provincia in list)
+            {
+                ddlProvincia.Items.Add(new ListItem(provincia.Descripcion_Provincia, provincia.Id_provincia.ToString()));
+            }
+        }
+
     }
 }

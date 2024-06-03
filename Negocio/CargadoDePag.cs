@@ -13,40 +13,7 @@ namespace Negocio
     public class CargadoDePag
     {
         public CargadoDePag() { }
-        public void CargarDDLProvinciasa(ref DropDownList dropDownList)
-        {
-            AccesoDatos ac = new AccesoDatos();
-            List<string> provincias = new List<string>();
-            SqlDataReader reader = ac.obtenerReadDDl();
 
-
-
-            if (reader != null)
-            {
-                try
-                {
-                    while (reader.Read())
-                    {
-                        string provincia = reader["DescripcionProvincia"].ToString();
-                        if (!provincias.Contains(provincia))
-                        {
-                            provincias.Add(provincia);
-                            dropDownList.Items.Add(new ListItem(provincia, reader["Id_Provincia"].ToString()));
-                        }
-                    }
-                }
-
-                finally
-                {
-                    dropDownList.Items.Insert(0, new ListItem("-- Seleccionar --", ""));
-                  
-                    reader.Close();
-                   
-                }
-            }
-
-            
-        }
         public void limpiarCampos(ref TextBox txtNombreSucursal, ref TextBox txtDescripcion, ref TextBox txtDireccion, ref DropDownList ddlProvincia)
         {
             txtNombreSucursal.Text = "";
@@ -71,7 +38,7 @@ namespace Negocio
         {
             if (estado)
             {
-                lblmensaje.Text = "La Sucursal se elimino con correctamente";
+                lblmensaje.Text = "La Sucursal se elimino correctamente";
             }
             else
             {

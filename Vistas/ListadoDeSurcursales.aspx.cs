@@ -27,6 +27,7 @@ namespace Vistas
 
         protected void btnMostrar_Click(object sender, EventArgs e)
         {
+            lblMsgAdv.Visible = false;
             DataTable tablaSucursal = neg.getGrd();
             CargadoDePag car = new CargadoDePag();
             grdSucursales.DataSource = tablaSucursal;
@@ -38,8 +39,19 @@ namespace Vistas
         {
             CargadoDePag car = new CargadoDePag();
             DataTable tablaSucursal = neg.getGrdFiltrado(txtBusqueda.Text);
-            grdSucursales.DataSource = tablaSucursal;
-            grdSucursales.DataBind();
+            if (tablaSucursal.Rows.Count > 0)
+            {
+                grdSucursales.DataSource = tablaSucursal;
+                grdSucursales.DataBind();
+                lblMsgAdv.Visible = false;
+            }
+            else
+            {
+                grdSucursales.DataSource = null;
+                grdSucursales.DataBind();
+                lblMsgAdv.Text = "No se encontro el ID Sucursal indicado, ingresa otro.";
+                lblMsgAdv.Visible = true;
+            }
             car.Vaciartxt(ref txtBusqueda);
 
         }
