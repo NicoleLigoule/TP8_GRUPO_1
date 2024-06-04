@@ -13,7 +13,8 @@ namespace Datos
         AccesoDatos ds = new AccesoDatos();
         public Boolean existeSucursal(Sucursal suc)
         {
-            String consulta = "Select * from Sucursal where NombreSucursal = '"+suc.GetNombreSucursal()+"'and DireccionSucursal = '"+suc.GetDireSucur()+"'";
+            String consulta = "Select * from Sucursal where NombreSucursal = '"+suc.GetNombreSucursal()+"'and DireccionSucursal = '"+suc.GetDireSucur()+
+                          "' and Id_ProvinciaSucursal = '" + suc.GetId_ProvinciaSucursal() + "'";
             return ds.existe(consulta);
         }
 
