@@ -20,9 +20,17 @@ namespace Vistas
         {
             int id_sucursal = int.Parse(txtEliminarSucu.Text);
             NegocioSucursal ds = new NegocioSucursal();
-            CargadoDePag car = new CargadoDePag();
-            car.MensajeEliminado(ref lblMensaje, ds.eliminarSucursal(id_sucursal));
-            car.Vaciartxt(ref txtEliminarSucu);
+            
+            if (ds.eliminarSucursal(id_sucursal))
+            {
+                lblMensaje.Text = "La Sucursal se elimino correctamente";
+            }
+            else
+            {
+                lblMensaje.Text = "La Sucursal no se pudo eliminar";
+            }
+
+            txtEliminarSucu.Text = "";
             
 
         }

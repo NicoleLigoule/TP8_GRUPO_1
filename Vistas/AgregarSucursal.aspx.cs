@@ -24,13 +24,24 @@ namespace Vistas
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            CargadoDePag cargado = new CargadoDePag();
+          
             NegocioSucursal AgregarSucursal = new NegocioSucursal();
             Sucursal sucu = new Sucursal(txtNombreSucursal.Text, txtDescripcion.Text, ddlProvincia.SelectedItem.Value, txtDireccion.Text);
             
-            cargado.MensajeAgregar(ref lblMensaje, AgregarSucursal.agregarSucursal(sucu));
+            
+            if (AgregarSucursal.agregarSucursal(sucu))
+            {
+                lblMensaje.Text = "La Sucursal se agrego correctamente";
+            }
+            else
+            {
+                lblMensaje.Text = "La Sucursal no se pudo agregar";
+            }
 
-            cargado.limpiarCampos(ref txtNombreSucursal, ref txtDireccion, ref txtDescripcion, ref ddlProvincia);
+            txtNombreSucursal.Text = "";
+            txtDireccion.Text = ""; 
+            txtDescripcion.Text = "";
+            ddlProvincia.SelectedIndex = 0;
         }
 
         private void CargarDropDown()

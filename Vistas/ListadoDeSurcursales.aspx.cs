@@ -29,15 +29,15 @@ namespace Vistas
         {
             lblMsgAdv.Visible = false;
             DataTable tablaSucursal = neg.getGrd();
-            CargadoDePag car = new CargadoDePag();
+            
             grdSucursales.DataSource = tablaSucursal;
             grdSucursales.DataBind();
-            car.Vaciartxt(ref txtBusqueda);
+            txtBusqueda.Text = "";
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            CargadoDePag car = new CargadoDePag();
+          
             DataTable tablaSucursal = neg.getGrdFiltrado(txtBusqueda.Text);
             if (tablaSucursal.Rows.Count > 0)
             {
@@ -52,7 +52,7 @@ namespace Vistas
                 lblMsgAdv.Text = "No se encontro el ID Sucursal indicado, ingresa otro.";
                 lblMsgAdv.Visible = true;
             }
-            car.Vaciartxt(ref txtBusqueda);
+            txtBusqueda.Text = "";
 
         }
     }
