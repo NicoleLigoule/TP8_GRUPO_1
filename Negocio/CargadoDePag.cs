@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 using Datos;
 using System.Data.SqlClient;
-using System.Web.UI.WebControls;
+//using System.Web.UI.WebControls;
 
 namespace Negocio
 {
